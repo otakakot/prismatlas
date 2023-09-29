@@ -24,10 +24,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Setup Go
-        uses: actions/setup-go@v4
-      - name: Setup tbls
-        run: go install github.com/k1LoW/tbls@latest
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1
       - name: Setup Prisma
@@ -40,8 +36,6 @@ jobs:
       - name: Prisma pull
         run : bun run prisma db pull
         working-directory: schema
-      - name: Doc tbls
-        run: rm -rf doc/** && tbls doc "postgres://postgres:postgres@localhost:5432/postgres?sslmode=disable" doc
       - name: Check diff
         run: |
           if [ -n "$(git status --porcelain)" ]; then
