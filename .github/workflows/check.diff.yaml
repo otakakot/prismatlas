@@ -1,0 +1,38 @@
+name: check diff
+run-name: ${{ github.ref_name }} by @${{ github.actor }} ${{ github.workflow }}
+on:
+  pull_request:
+    paths:
+      - .github/workflows/check.diff.yaml
+      - 'schema/**'
+jobs:
+  diff:
+    runs-on: ubuntu-22.04
+    services:
+      postgres:
+        image: postgres:15.3
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_USER: postgres
+          POSTGRES_DB: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+    env:
+      DATABASE_URL: postgres://postgres:postgres@localhost:5432/postgres?sslmode=disable
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set up go
+        uses: actions/setup-go@v4
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+      - name: Check diff
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git status --porcelain;
+            exit 1;
+          else
+            echo "no changes";
+          fi
