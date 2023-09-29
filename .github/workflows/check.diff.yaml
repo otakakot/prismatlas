@@ -24,10 +24,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Set up go
+      - name: Setup Go
         uses: actions/setup-go@v4
+      - name: Setup tbls
+        run: go install github.com/k1LoW/tbls@latest
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1
+      - name: Setup Prisma
+        run: bun install
+        working-directory: schema
+      - name: Setup Atlas
+        run: curl -sSf https://atlasgo.sh | sh
       - name: Check diff
         run: |
           if [ -n "$(git status --porcelain)" ]; then
