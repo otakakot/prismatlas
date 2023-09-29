@@ -51,7 +51,7 @@ atlasinspect:
 
 .PHONY: atlasapply
 atlasapply:
-	@atlas schema apply -u ${DATABASE_URL} --to file://schema/schema.hcl
+	@atlas schema apply -u ${DATABASE_URL} --to file://schema/schema.hcl --auto-approve
 
 .PHONY: atlasfmt
 atlasfmt:

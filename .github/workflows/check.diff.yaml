@@ -36,7 +36,7 @@ jobs:
       - name: Setup Atlas
         run: curl -sSf https://atlasgo.sh | sh
       - name: Atlas apply
-        run: atlas schema apply -u ${DATABASE_URL} --to file://schema/schema.hcl
+        run: atlas schema apply -u ${DATABASE_URL} --to file://schema/schema.hcl --auto-approve
       - name: Prisma pull
         run : bun run prisma db pull
         working-directory: schema
