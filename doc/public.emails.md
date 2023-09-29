@@ -6,12 +6,12 @@
 
 | Name | Type | Default | Nullable | Children | Parents | Comment |
 | ---- | ---- | ------- | -------- | -------- | ------- | ------- |
-| id | uuid |  | false |  |  |  |
+| id | uuid | gen_random_uuid() | false |  |  |  |
 | value | text |  | false |  |  |  |
-| created_at | timestamp(3) with time zone |  | false |  |  |  |
-| updated_at | timestamp(3) with time zone |  | false |  |  |  |
-| is_deleted | boolean |  | false |  |  |  |
+| created_at | timestamp(3) with time zone | CURRENT_TIMESTAMP | false |  |  |  |
+| updated_at | timestamp(3) with time zone | CURRENT_TIMESTAMP | false |  |  |  |
 | account_id | uuid |  | false |  | [public.accounts](public.accounts.md) |  |
+| deleted | boolean | false | false |  |  |  |
 
 ## Constraints
 
@@ -29,7 +29,7 @@
 | emails_account_id_key | CREATE UNIQUE INDEX emails_account_id_key ON public.emails USING btree (account_id) |
 | emails_value_idx | CREATE INDEX emails_value_idx ON public.emails USING btree (value) |
 | emails_value_key | CREATE UNIQUE INDEX emails_value_key ON public.emails USING btree (value) |
-| emails_value_not_is_deleted_idx | CREATE UNIQUE INDEX emails_value_not_is_deleted_idx ON public.emails USING btree (value) WHERE (NOT is_deleted) |
+| emails_value_not_deleted_idx | CREATE UNIQUE INDEX emails_value_not_deleted_idx ON public.emails USING btree (value) WHERE (NOT deleted) |
 
 ## Relations
 

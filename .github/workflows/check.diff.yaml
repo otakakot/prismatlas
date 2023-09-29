@@ -41,7 +41,7 @@ jobs:
         run : bun run prisma db pull
         working-directory: schema
       - name: Doc tbls
-        run: tbls doc "postgres://postgres:postgres@localhost:5432/postgres?sslmode=disable" doc
+        run: rm -rf doc/** && tbls doc "postgres://postgres:postgres@localhost:5432/postgres?sslmode=disable" doc
       - name: Check diff
         run: |
           if [ -n "$(git status --porcelain)" ]; then

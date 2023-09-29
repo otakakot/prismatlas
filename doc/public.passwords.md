@@ -6,10 +6,10 @@
 
 | Name | Type | Default | Nullable | Children | Parents | Comment |
 | ---- | ---- | ------- | -------- | -------- | ------- | ------- |
-| id | uuid |  | false |  |  |  |
+| id | uuid | gen_random_uuid() | false |  |  |  |
 | value | bytea |  | false |  |  |  |
-| created_at | timestamp(3) with time zone |  | false |  |  |  |
-| updated_at | timestamp(3) with time zone |  | false |  |  |  |
+| created_at | timestamp(3) with time zone | CURRENT_TIMESTAMP | false |  |  |  |
+| updated_at | timestamp(3) with time zone | CURRENT_TIMESTAMP | false |  |  |  |
 | account_id | uuid |  | false |  | [public.accounts](public.accounts.md) |  |
 
 ## Constraints

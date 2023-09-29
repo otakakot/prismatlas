@@ -6,10 +6,10 @@
 
 | Name | Type | Default | Nullable | Children | Parents | Comment |
 | ---- | ---- | ------- | -------- | -------- | ------- | ------- |
-| id | uuid |  | false | [public.emails](public.emails.md) [public.passwords](public.passwords.md) [public.profiles](public.profiles.md) |  |  |
-| created_at | timestamp(3) with time zone |  | false |  |  |  |
-| updated_at | timestamp(3) with time zone |  | false |  |  |  |
-| is_deleted | boolean |  | false |  |  |  |
+| id | uuid | gen_random_uuid() | false | [public.emails](public.emails.md) [public.passwords](public.passwords.md) [public.profiles](public.profiles.md) |  |  |
+| created_at | timestamp(3) with time zone | CURRENT_TIMESTAMP | false |  |  |  |
+| updated_at | timestamp(3) with time zone | CURRENT_TIMESTAMP | false |  |  |  |
+| deleted | boolean | false | false |  |  |  |
 
 ## Constraints
 

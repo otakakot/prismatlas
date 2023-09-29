@@ -27,8 +27,8 @@
 <text text-anchor="start" x="602.9825" y="-83.9" font-family="Arial" font-size="14.00" fill="#000000">updated_at    </text>
 <text text-anchor="start" x="707.2293" y="-83.9" font-family="Arial" font-size="14.00" fill="#666666">[timestamp(3) with time zone]</text>
 <polygon fill="none" stroke="#000000" points="596,-42.5 596,-72.5 897,-72.5 897,-42.5 596,-42.5"/>
-<text text-anchor="start" x="603" y="-53.9" font-family="Arial" font-size="14.00" fill="#000000">is_deleted    </text>
-<text text-anchor="start" x="701.0042" y="-53.9" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
+<text text-anchor="start" x="603" y="-53.9" font-family="Arial" font-size="14.00" fill="#000000">deleted    </text>
+<text text-anchor="start" x="683.115" y="-53.9" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
 </g>
 <!-- public.emails -->
 <g id="node2" class="node">
@@ -51,18 +51,18 @@
 <text text-anchor="start" x="197.9825" y="-390.9" font-family="Arial" font-size="14.00" fill="#000000">updated_at    </text>
 <text text-anchor="start" x="302.2293" y="-390.9" font-family="Arial" font-size="14.00" fill="#666666">[timestamp(3) with time zone]</text>
 <polygon fill="none" stroke="#000000" points="191,-349.5 191,-379.5 492,-379.5 492,-349.5 191,-349.5"/>
-<text text-anchor="start" x="198" y="-360.9" font-family="Arial" font-size="14.00" fill="#000000">is_deleted    </text>
-<text text-anchor="start" x="296.0042" y="-360.9" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
+<text text-anchor="start" x="198" y="-360.9" font-family="Arial" font-size="14.00" fill="#000000">account_id    </text>
+<text text-anchor="start" x="299.8976" y="-360.9" font-family="Arial" font-size="14.00" fill="#666666">[uuid]</text>
 <polygon fill="none" stroke="#000000" points="191,-319.5 191,-349.5 492,-349.5 492,-319.5 191,-319.5"/>
-<text text-anchor="start" x="198" y="-330.9" font-family="Arial" font-size="14.00" fill="#000000">account_id    </text>
-<text text-anchor="start" x="299.8976" y="-330.9" font-family="Arial" font-size="14.00" fill="#666666">[uuid]</text>
+<text text-anchor="start" x="198" y="-330.9" font-family="Arial" font-size="14.00" fill="#000000">deleted    </text>
+<text text-anchor="start" x="278.115" y="-330.9" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
 </g>
 <!-- public.emails&#45;&gt;public.accounts -->
 <g id="edge1" class="edge">
 <title>public.emails:account_id&#45;&gt;public.accounts:id</title>
-<path fill="none" stroke="#000000" d="M502.3362,-333.6663C580.642,-320.176 504.6151,-147.5 596,-147.5"/>
-<polygon fill="#000000" stroke="#000000" points="501.9676,-333.6959 491.6382,-330.0146 496.9838,-334.098 492,-334.5 492,-334.5 492,-334.5 496.9838,-334.098 492.3618,-338.9854 501.9676,-333.6959 501.9676,-333.6959"/>
-<text text-anchor="start" x="6.545" y="-344.5" font-family="Arial" font-size="10.00" fill="#000000">FOREIGN KEY (account_id) REFERENCES accounts(id) ON UPDATE CASCADE ON DELETE RESTRICT</text>
+<path fill="none" stroke="#000000" d="M501.6668,-361.9118C545.3286,-337.4288 545.9722,-147.5 596,-147.5"/>
+<polygon fill="#000000" stroke="#000000" points="501.6598,-361.9136 490.8361,-360.1531 496.8299,-363.2068 492,-364.5 492,-364.5 492,-364.5 496.8299,-363.2068 493.1639,-368.8469 501.6598,-361.9136 501.6598,-361.9136"/>
+<text text-anchor="start" x="6.545" y="-374.5" font-family="Arial" font-size="10.00" fill="#000000">FOREIGN KEY (account_id) REFERENCES accounts(id) ON UPDATE CASCADE ON DELETE RESTRICT</text>
 </g>
 <!-- public.passwords -->
 <g id="node3" class="node">
