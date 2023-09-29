@@ -35,6 +35,13 @@ jobs:
         working-directory: schema
       - name: Setup Atlas
         run: curl -sSf https://atlasgo.sh | sh
+      - name: Atlas apply
+        run: atlas schema apply -u ${DATABASE_URL} --to file://schema/schema.hcl
+      - name: Prisma pull
+        run : bun run prisma db pull
+        working-directory: schema
+      - name: Doc tbls
+        run: tbls doc $(DATABASE_URL) doc
       - name: Check diff
         run: |
           if [ -n "$(git status --porcelain)" ]; then
