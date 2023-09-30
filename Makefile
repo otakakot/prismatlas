@@ -27,7 +27,7 @@ migrate:
 
 .PHONY: doc
 doc:
-	@rm -rf doc/** && tbls doc ${DATABASE_URL} doc
+	@tbls doc ${DATABASE_URL} doc --force
 
 .PHONY: prismastudio
 prismastudio:
