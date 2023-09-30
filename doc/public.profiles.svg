@@ -55,8 +55,8 @@
 <text text-anchor="start" x="347.9825" y="-83.9" font-family="Arial" font-size="14.00" fill="#000000">updated_at    </text>
 <text text-anchor="start" x="452.2293" y="-83.9" font-family="Arial" font-size="14.00" fill="#666666">[timestamp(3) with time zone]</text>
 <polygon fill="none" stroke="#000000" points="341,-42.5 341,-72.5 642,-72.5 642,-42.5 341,-42.5"/>
-<text text-anchor="start" x="348" y="-53.9" font-family="Arial" font-size="14.00" fill="#000000">is_deleted    </text>
-<text text-anchor="start" x="446.0042" y="-53.9" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
+<text text-anchor="start" x="348" y="-53.9" font-family="Arial" font-size="14.00" fill="#000000">deleted    </text>
+<text text-anchor="start" x="428.115" y="-53.9" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
 </g>
 <!-- public.profiles&#45;&gt;public.accounts -->
 <g id="edge1" class="edge">

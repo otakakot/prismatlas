@@ -24,10 +24,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Set up go
-        uses: actions/setup-go@v4
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1
+      - name: Setup Prisma
+        run: bun install
+        working-directory: schema
+      - name: Setup Atlas
+        run: curl -sSf https://atlasgo.sh | sh
+      - name: Atlas apply
+        run: atlas schema apply -u "postgres://postgres:postgres@localhost:5432/postgres?sslmode=disable" --to file://schema/schema.hcl --auto-approve
+      - name: Prisma pull
+        run : bun run prisma db pull
+        working-directory: schema
       - name: Check diff
         run: |
           if [ -n "$(git status --porcelain)" ]; then

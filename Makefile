@@ -27,7 +27,7 @@ migrate:
 
 .PHONY: doc
 doc:
-	@tbls doc $(DATABASE_URL) doc
+	@rm -rf doc/** && tbls doc ${DATABASE_URL} doc
 
 .PHONY: prismastudio
 prismastudio:
@@ -51,7 +51,7 @@ atlasinspect:
 
 .PHONY: atlasapply
 atlasapply:
-	@atlas schema apply -u ${DATABASE_URL} --to file://schema/schema.hcl
+	@atlas schema apply -u ${DATABASE_URL} --to file://schema/schema.hcl --auto-approve
 
 .PHONY: atlasfmt
 atlasfmt:
